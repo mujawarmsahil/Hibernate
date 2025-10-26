@@ -4,6 +4,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import org.hibernatetutorials.pojo.Student;
 
 
 /*
@@ -59,7 +60,7 @@ public class SaveTheData {
         configuration.configure("hibernate.cfg.xml");
 
         // Added/Registered the annotated class student into configuration
-        configuration.addAnnotatedClass(org.hibernatetutorials.Student.class);
+        configuration.addAnnotatedClass(Student.class);
 
         // SessionFactory is an interface which is used to build a factory and should create one instance per database application cause it consumes a lot of resources.
         SessionFactory sessionFactory = configuration.buildSessionFactory();

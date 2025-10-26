@@ -1,4 +1,4 @@
-package org.hibernatetutorials;
+package org.hibernatetutorials.pojo;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
