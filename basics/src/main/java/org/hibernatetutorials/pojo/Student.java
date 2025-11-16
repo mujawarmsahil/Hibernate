@@ -2,6 +2,8 @@ package org.hibernatetutorials.pojo;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Student {
@@ -9,6 +11,9 @@ public class Student {
     private int roll_no;
     private String name;
     private int age;
+    @ManyToOne
+    @JoinColumn(name = "school_id")
+    private School school;
 
     @Override
     public String toString() {
@@ -17,6 +22,14 @@ public class Student {
                 ", name='" + name + '\'' +
                 ", age=" + age +
                 '}';
+    }
+
+    public School getSchool() {
+        return school;
+    }
+
+    public void setSchool(School school) {
+        this.school = school;
     }
 
     public String getName() {
